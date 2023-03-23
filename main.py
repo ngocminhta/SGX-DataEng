@@ -124,7 +124,7 @@ def checkFile(curday):
     files = ["WEBPXTICK_DT.zip", "TickData_structure.dat", "TC.txt", "TC_structure.dat"]
     for file in curfiles:
         if file not in files:
-            logging.error("The file %s in date %s is missing! Redownloading...",file, curfiles)
+            logging.error("The file %s in date %s is missing! Re-downloading...",file, curfiles)
             return False
     return True
 
