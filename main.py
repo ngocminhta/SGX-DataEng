@@ -64,7 +64,8 @@ def downloadNewDate(lastDate, cur):
             if curdate >= lastBuzDay:
                 break
         except:
-            continue
+            if curdate >= lastBuzDay:
+                break
         i += 1
 
 
@@ -97,7 +98,7 @@ def downloadRangeDay(start, end):
         try:
             downloadSpecificDay(currday)
         except:
-            logging.error("The date %s is not a working day!", currday)
+            logging.warning("The date %s is not a working day!", currday)
         currday = nextBusinessDay(currday)
 
 
@@ -123,6 +124,7 @@ def checkFile(curday):
     files = ["WEBPXTICK_DT.zip", "TickData_structure.dat", "TC.txt", "TC_structure.dat"]
     for file in curfiles:
         if file not in files:
+            logging.error("The file %s in date %s is missing! Redownloading...",file, curfiles)
             return False
     return True
 
