@@ -56,7 +56,7 @@ def downloadNewDate(lastDate, cur):
                 curdate = header[-16:-12] + '-' + header[-12:-10] + '-' + header[-10:-8]
 
             date[curdate] = i
-            logging.info('Updating new date...\t %s', curdate)
+            logging.info('*** Updating new date... %s', curdate)
 
             with open('dateHistory.json', 'w') as f2:
                 json.dump(date, f2)
@@ -140,9 +140,12 @@ if __name__ == '__main__':
         choice = input('Your choice is: ')
         if choice == '1':
             try:
+                cur = lastBusinessDay()
+                if cur > list(date)[-1]:
+                    downloadNewDate(list(date)[-1], cur)
                 downloadSpecificDay(lastBusinessDay())
             except:
-                print('Your date you typed is not valid. Please try again.')
+                print('Data for the date you chosen is not published. Please try again.')
                 downloadSpecificDay(lastBusinessDay())
         elif choice == '2':
             try:
