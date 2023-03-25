@@ -1,2 +1,128 @@
 2023-03-25 12:57:47,184: ERROR 	 Data for the date 2023-03-24 is not published.
 2023-03-25 12:58:17: ERROR 	 Data for the date 2023-03-24 is not published.
+2023-03-25 13:40:45: ERROR 	 Data for the date 2023-03-24 is not published.
+2023-03-25 13:42:19: ERROR 	 Data for the date 2023-03-24 is not published.
+2023-03-25 14:02:19: ERROR 	 Data for the date 2023-03-24 is not published.
+2023-03-25 14:02:32: ERROR 	 Data for the date 2023-03-24 is not published.
+2023-03-25 14:02:46: ERROR 	 Data for the date 2023-03-24 is not published.
+2023-03-25 14:02:55: ERROR 	 Data for the date 2023-03-24 is not published.
+2023-03-25 14:09:09: INFO 	 --- Downloading the date 2023-03-22
+2023-03-25 14:09:34: INFO 	 Downloading...	 WEBPXTICK_DT.zip
+2023-03-25 14:09:34: INFO 	 File downloaded.	 WEBPXTICK_DT.zip
+2023-03-25 14:09:35: INFO 	 Downloading...	 TickData_structure.dat
+2023-03-25 14:09:35: INFO 	 File downloaded.	 TickData_structure.dat
+2023-03-25 14:09:35: INFO 	 Downloading...	 TC.txt
+2023-03-25 14:09:35: INFO 	 File downloaded.	 TC.txt
+2023-03-25 14:09:35: INFO 	 Downloading...	 TC_structure.dat
+2023-03-25 14:09:35: INFO 	 File downloaded.	 TC_structure.dat
+2023-03-25 14:09:49: INFO 	 The date 2023-03-22 has already downloaded.
+2023-03-25 14:10:25: INFO 	 Some files in 2023-03-22 are missing. Re-downloading...
+2023-03-25 14:10:25: INFO 	 --- Downloading the date 2023-03-22
+2023-03-25 14:10:52: INFO 	 Downloading...	 WEBPXTICK_DT.zip
+2023-03-25 14:10:52: INFO 	 File downloaded.	 WEBPXTICK_DT.zip
+2023-03-25 14:10:52: INFO 	 Downloading...	 TickData_structure.dat
+2023-03-25 14:10:52: INFO 	 File downloaded.	 TickData_structure.dat
+2023-03-25 14:10:53: INFO 	 Downloading...	 TC.txt
+2023-03-25 14:10:53: INFO 	 File downloaded.	 TC.txt
+2023-03-25 14:10:54: INFO 	 Downloading...	 TC_structure.dat
+2023-03-25 14:10:54: INFO 	 File downloaded.	 TC_structure.dat
+2023-03-25 14:10:54: INFO 	 Some files in 2023-03-22 are missing. Re-downloading...
+2023-03-25 14:10:54: INFO 	 Some files in 2023-03-22 are missing. Re-downloading...
+2023-03-25 14:10:54: INFO 	 --- Downloading the date 2023-03-22
+2023-03-25 14:12:00: INFO 	 Downloading...	 WEBPXTICK_DT.zip
+2023-03-25 14:12:00: INFO 	 File downloaded.	 WEBPXTICK_DT.zip
+2023-03-25 14:12:01: INFO 	 Downloading...	 TickData_structure.dat
+2023-03-25 14:12:01: INFO 	 File downloaded.	 TickData_structure.dat
+2023-03-25 14:12:01: INFO 	 Downloading...	 TC.txt
+2023-03-25 14:12:01: INFO 	 File downloaded.	 TC.txt
+2023-03-25 14:12:01: INFO 	 Downloading...	 TC_structure.dat
+2023-03-25 14:12:01: INFO 	 File downloaded.	 TC_structure.dat
+2023-03-25 14:12:01: INFO 	 Some files in 2023-03-22 are missing. Re-downloading...
+2023-03-25 14:12:01: INFO 	 Some files in 2023-03-22 are missing. Re-downloading...
+2023-03-25 14:12:01: INFO 	 --- Downloading the date 2023-03-22
+2023-03-25 14:20:18: ERROR 	 Data for the date 2023-03-24 is not published.
+2023-03-25 14:20:34: INFO 	 Some files in 2023-03-22 are missing. Re-downloading...
+2023-03-25 14:20:34: INFO 	 --- Downloading the date 2023-03-22
+2023-03-25 14:21:37: INFO 	 Some files in 2023-03-22 are missing. Re-downloading...
+2023-03-25 14:21:37: INFO 	 --- Downloading the date 2023-03-22
+2023-03-25 14:21:38: INFO 	 Downloading...	 TC.txt
+2023-03-25 14:21:38: INFO 	 File downloaded.	 TC.txt
+2023-03-25 14:22:24: WARNING 	 The date 2023-03-19 is not a working day!
+2023-03-25 14:22:24: INFO 	 --- Downloading the date 2023-03-20
+2023-03-25 14:22:24: WARNING 	 The date 2023-03-20 is not a working day!
+2023-03-25 14:22:24: INFO 	 --- Downloading the date 2023-03-21
+2023-03-25 14:22:24: WARNING 	 The date 2023-03-21 is not a working day!
+2023-03-25 14:22:24: INFO 	 Some files in 2023-03-22 are missing. Re-downloading...
+2023-03-25 14:22:24: INFO 	 --- Downloading the date 2023-03-22
+2023-03-25 14:22:30: INFO 	 Downloading...	 WEBPXTICK_DT.zip
+2023-03-25 14:22:30: INFO 	 File downloaded.	 WEBPXTICK_DT.zip
+2023-03-25 14:22:30: INFO 	 Downloading...	 TickData_structure.dat
+2023-03-25 14:22:30: INFO 	 File downloaded.	 TickData_structure.dat
+2023-03-25 14:22:30: INFO 	 --- Downloading the date 2023-03-23
+2023-03-25 14:22:30: WARNING 	 The date 2023-03-23 is not a working day!
+2023-03-25 14:26:11: INFO 	 The date 2023-03-22 has already downloaded.
+2023-03-25 14:28:47: INFO 	 The date 2023-03-22 has already downloaded.
+2023-03-25 14:29:27: INFO 	 Some files in 2023-03-22 are missing. Re-downloading...
+2023-03-25 14:29:27: INFO 	 --- Downloading the date 2023-03-22
+2023-03-25 14:29:28: INFO 	 Downloading...	 TickData_structure.dat
+2023-03-25 14:29:28: INFO 	 File downloaded.	 TickData_structure.dat
+2023-03-25 14:34:20: WARNING 	 The date 2023-03-19 is not a working day!
+2023-03-25 14:34:20: INFO 	 --- Downloading the date 2023-03-20
+2023-03-25 14:34:20: WARNING 	 The date 2023-03-20 is not a working day!
+2023-03-25 14:34:20: INFO 	 --- Downloading the date 2023-03-21
+2023-03-25 14:34:20: WARNING 	 The date 2023-03-21 is not a working day!
+2023-03-25 14:34:20: INFO 	 The date 2023-03-22 has already downloaded.
+2023-03-25 14:34:20: INFO 	 --- Downloading the date 2023-03-23
+2023-03-25 14:34:20: WARNING 	 The date 2023-03-23 is not a working day!
+2023-03-25 14:36:45: INFO 	 --- Downloading the date 2023-03-23
+2023-03-25 14:38:57: INFO 	 --- Downloading the date 2023-03-23
+2023-03-25 14:39:01: INFO 	 Downloading...	 WEBPXTICK_DT.zip
+2023-03-25 14:39:01: INFO 	 File downloaded.	 WEBPXTICK_DT.zip
+2023-03-25 14:39:01: INFO 	 Downloading...	 TickData_structure.dat
+2023-03-25 14:39:01: INFO 	 File downloaded.	 TickData_structure.dat
+2023-03-25 14:39:02: INFO 	 Downloading...	 TC.txt
+2023-03-25 14:39:02: INFO 	 File downloaded.	 TC.txt
+2023-03-25 14:39:02: INFO 	 Downloading...	 TC_structure.dat
+2023-03-25 14:39:02: INFO 	 File downloaded.	 TC_structure.dat
+2023-03-25 14:39:27: WARNING 	 The date 2023-03-18 is not a working day!
+2023-03-25 14:39:27: INFO 	 --- Downloading the date 2023-03-20
+2023-03-25 14:39:32: INFO 	 Downloading...	 WEBPXTICK_DT.zip
+2023-03-25 14:39:32: INFO 	 File downloaded.	 WEBPXTICK_DT.zip
+2023-03-25 14:39:32: INFO 	 Downloading...	 TickData_structure.dat
+2023-03-25 14:39:32: INFO 	 File downloaded.	 TickData_structure.dat
+2023-03-25 14:39:32: INFO 	 Downloading...	 TC.txt
+2023-03-25 14:39:32: INFO 	 File downloaded.	 TC.txt
+2023-03-25 14:39:32: INFO 	 Downloading...	 TC_structure.dat
+2023-03-25 14:39:32: INFO 	 File downloaded.	 TC_structure.dat
+2023-03-25 14:39:32: INFO 	 --- Downloading the date 2023-03-21
+2023-03-25 14:39:36: INFO 	 Downloading...	 WEBPXTICK_DT.zip
+2023-03-25 14:39:36: INFO 	 File downloaded.	 WEBPXTICK_DT.zip
+2023-03-25 14:39:37: INFO 	 Downloading...	 TickData_structure.dat
+2023-03-25 14:39:37: INFO 	 File downloaded.	 TickData_structure.dat
+2023-03-25 14:39:37: INFO 	 Downloading...	 TC.txt
+2023-03-25 14:39:37: INFO 	 File downloaded.	 TC.txt
+2023-03-25 14:39:37: INFO 	 Downloading...	 TC_structure.dat
+2023-03-25 14:39:37: INFO 	 File downloaded.	 TC_structure.dat
+2023-03-25 14:39:37: INFO 	 The date 2023-03-22 has already downloaded.
+2023-03-25 14:39:37: INFO 	 The date 2023-03-23 has already downloaded.
+2023-03-25 15:52:40: INFO 	 --- Downloading the date 2014-01-03
+2023-03-25 15:52:46: INFO 	 Downloading...	 WEBPXTICK_DT.zip
+2023-03-25 15:52:46: INFO 	 File downloaded.	 WEBPXTICK_DT.zip
+2023-03-25 15:52:46: INFO 	 Downloading...	 TickData_structure.dat
+2023-03-25 15:52:46: INFO 	 File downloaded.	 TickData_structure.dat
+2023-03-25 15:52:46: INFO 	 Downloading...	 TC.txt
+2023-03-25 15:52:46: INFO 	 File downloaded.	 TC.txt
+2023-03-25 15:52:46: INFO 	 Downloading...	 TC_structure.dat
+2023-03-25 15:52:46: INFO 	 File downloaded.	 TC_structure.dat
+2023-03-25 17:21:19: ERROR 	 Data for the date 2023-03-24 is not published.
+2023-03-25 17:21:37: ERROR 	 Data for the date 2023-03-24 is not published.
+2023-03-25 17:21:57: INFO 	 --- Downloading the date 2022-12-01
+2023-03-25 17:22:15: INFO 	 Downloading...	 WEBPXTICK_DT.zip
+2023-03-25 17:22:15: INFO 	 File downloaded.	 WEBPXTICK_DT.zip
+2023-03-25 17:22:15: INFO 	 Downloading...	 TickData_structure.dat
+2023-03-25 17:22:15: INFO 	 File downloaded.	 TickData_structure.dat
+2023-03-25 17:22:16: INFO 	 Downloading...	 TC.txt
+2023-03-25 17:22:16: INFO 	 File downloaded.	 TC.txt
+2023-03-25 17:22:16: INFO 	 Downloading...	 TC_structure.dat
+2023-03-25 17:22:16: INFO 	 File downloaded.	 TC_structure.dat
+2023-03-25 17:27:19: ERROR 	 Data for the date 2023-03-24 is not published.

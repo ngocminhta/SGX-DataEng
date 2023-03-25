@@ -3,11 +3,11 @@ from datetime import datetime, timedelta
 import requests
 import os
 import logging
+import time
 
 global date
-# logging.basicConfig(filename='log_SGX.log', format='%(asctime)s: %(levelname)s \t %(message)s', level=logging.INFO,
-#                     datefmt='%Y-%m-%d %H:%M:%S')
 
+# Create logging to both console and file
 logger = logging.getLogger("log_SGX")
 formatter = logging.Formatter('%(asctime)s: %(levelname)s \t %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 logger.setLevel(logging.DEBUG)
@@ -91,11 +91,27 @@ def downloadSpecificDay(directory):
     if cvDate == '':
         return
 
+    missingfiles = ["WEBPXTICK_DT.zip", "TickData_structure.dat", "TC.txt", "TC_structure.dat"]
+    if os.path.exists(directory):
+        missingfiles = checkFile(directory)
+        if missingfiles == []:
+            logger.info('The date %s has already downloaded.', directory)
+            return
+        elif len(missingfiles) != 5 and '.DS_Store' in missingfiles:
+            logger.info('Some files in %s are missing. Re-downloading...', directory)
+        elif len(missingfiles) != 4:
+            logger.info('Some files in %s are missing. Re-downloading...', directory)
+
     logger.info('--- Downloading the date %s', directory)
     files = ["/WEBPXTICK_DT.zip", "/TickData_structure.dat", "/TC.txt", "/TC_structure.dat"]
+    fileToDown = []
+    for file in files:
+        if file[1:] in missingfiles:
+            fileToDown.append(file)
+
     URLpart = "https://links.sgx.com/1.0.0/derivatives-historical/"
 
-    for file in files:
+    for file in fileToDown:
         response = requests.get(URLpart + cvDate + file)
         header = response.headers.get('Content-Disposition')
         logger.info('Downloading...\t %s', file[1:])
@@ -103,9 +119,6 @@ def downloadSpecificDay(directory):
             os.mkdir(directory)
         open(directory + file, "wb").write(response.content)
         logger.info('File downloaded.\t %s', file[1:])
-
-    if not checkFile(directory):
-        downloadSpecificDay(directory)
 
 
 def downloadRangeDay(start, end):
@@ -137,12 +150,12 @@ def getDateRange():
 
 def checkFile(curday):
     curfiles = os.listdir(curday)
+    missingfiles = []
     files = ["WEBPXTICK_DT.zip", "TickData_structure.dat", "TC.txt", "TC_structure.dat"]
-    for file in curfiles:
-        if file not in files:
-            logger.error("The file %s in date %s is missing! Re-downloading...",file, curfiles)
-            return False
-    return True
+    for file in files:
+        if file not in curfiles:
+            missingfiles.append(file)
+    return missingfiles
 
 
 if __name__ == '__main__':
@@ -161,7 +174,7 @@ if __name__ == '__main__':
                     downloadNewDate(list(date)[-1], cur)
                 downloadSpecificDay(lastBusinessDay())
             except:
-                logger.error("Data for the date %s is not published.", lastBusinessDay())
+                logger.error("Data for the date %s has not published.", lastBusinessDay())
         elif choice == '2':
             try:
                 downloadSpecificDay(getDate())
@@ -171,6 +184,8 @@ if __name__ == '__main__':
         elif choice == '3':
             start, end = getDateRange()
             downloadRangeDay(start, end)
-        checkEnd = input("Do you want to download another day? (Y/N)\n")
-        if checkEnd == "N" or checkEnd == "n":
+        time.sleep(0.1)
+
+        checkEnd = input("Press Enter to continue download, press others to stop.\n")
+        if checkEnd != "":
             break
