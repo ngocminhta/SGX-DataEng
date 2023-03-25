@@ -5,8 +5,23 @@ import os
 import logging
 
 global date
-logging.basicConfig(filename='log_SGX.log', format='%(asctime)s: %(levelname)s \t %(message)s', level=logging.INFO,
-                    datefmt='%Y-%m-%d %H:%M:%S')
+# logging.basicConfig(filename='log_SGX.log', format='%(asctime)s: %(levelname)s \t %(message)s', level=logging.INFO,
+#                     datefmt='%Y-%m-%d %H:%M:%S')
+
+logger = logging.getLogger("log_SGX")
+formatter = logging.Formatter('%(asctime)s: %(levelname)s \t %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+logger.setLevel(logging.DEBUG)
+
+stream_handler = logging.StreamHandler()
+stream_handler.setLevel(logging.ERROR)
+stream_handler.setFormatter(formatter)
+
+file_handler = logging.FileHandler("log_SGX.log", mode='a')
+file_handler.setFormatter(formatter)
+file_handler.setLevel(logging.DEBUG)
+
+logger.addHandler(file_handler)
+logger.addHandler(stream_handler)
 
 
 def readDateHistory():
@@ -34,9 +49,7 @@ def nextBusinessDay(curdate):
     return nextBuzDay.strftime('%Y-%m-%d')
 
 
-def downloadNewDate(lastDate, cur):
-    lastBuzDay = lastBusinessDay()
-
+def downloadNewDate(lastDate, lastBuzDay):
     i = date[lastDate] + 1
     while True:
         try:
@@ -56,7 +69,7 @@ def downloadNewDate(lastDate, cur):
                 curdate = header[-16:-12] + '-' + header[-12:-10] + '-' + header[-10:-8]
 
             date[curdate] = i
-            logging.info('*** Updating new date... %s', curdate)
+            logger.info('*** Updating new date... %s', curdate)
 
             with open('dateHistory.json', 'w') as f2:
                 json.dump(date, f2)
@@ -64,6 +77,9 @@ def downloadNewDate(lastDate, cur):
             if curdate >= lastBuzDay:
                 break
         except:
+            # if curdate == None:
+            #     logging.error("The date %s has not published!", lastBuzDay)
+            #     break
             if curdate >= lastBuzDay:
                 break
         i += 1
@@ -75,18 +91,18 @@ def downloadSpecificDay(directory):
     if cvDate == '':
         return
 
-    logging.info('--- Downloading the date %s', directory)
+    logger.info('--- Downloading the date %s', directory)
     files = ["/WEBPXTICK_DT.zip", "/TickData_structure.dat", "/TC.txt", "/TC_structure.dat"]
     URLpart = "https://links.sgx.com/1.0.0/derivatives-historical/"
 
     for file in files:
         response = requests.get(URLpart + cvDate + file)
         header = response.headers.get('Content-Disposition')
-        logging.info('Downloading...\t %s', file[1:])
+        logger.info('Downloading...\t %s', file[1:])
         if not os.path.exists(directory):
             os.mkdir(directory)
         open(directory + file, "wb").write(response.content)
-        logging.info('File downloaded.\t %s', file[1:])
+        logger.info('File downloaded.\t %s', file[1:])
 
     if not checkFile(directory):
         downloadSpecificDay(directory)
@@ -98,7 +114,7 @@ def downloadRangeDay(start, end):
         try:
             downloadSpecificDay(currday)
         except:
-            logging.warning("The date %s is not a working day!", currday)
+            logger.warning("The date %s is not a working day!", currday)
         currday = nextBusinessDay(currday)
 
 
@@ -124,7 +140,7 @@ def checkFile(curday):
     files = ["WEBPXTICK_DT.zip", "TickData_structure.dat", "TC.txt", "TC_structure.dat"]
     for file in curfiles:
         if file not in files:
-            logging.error("The file %s in date %s is missing! Re-downloading...",file, curfiles)
+            logger.error("The file %s in date %s is missing! Re-downloading...",file, curfiles)
             return False
     return True
 
@@ -145,8 +161,7 @@ if __name__ == '__main__':
                     downloadNewDate(list(date)[-1], cur)
                 downloadSpecificDay(lastBusinessDay())
             except:
-                print('Data for the date you chosen is not published. Please try again.')
-                downloadSpecificDay(lastBusinessDay())
+                logger.error("Data for the date %s is not published.", lastBusinessDay())
         elif choice == '2':
             try:
                 downloadSpecificDay(getDate())
